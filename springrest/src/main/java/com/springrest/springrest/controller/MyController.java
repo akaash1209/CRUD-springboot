@@ -31,11 +31,7 @@ public class MyController {
 		return this.contantService.getContact();
 	}
 	
-	@GetMapping("/contact/{contactId}")
-	public Contact getSingleContact(@PathVariable String contactId)
-	{
-		return this.contantService.getSingleContact(contactId);
-	}
+	
 	
 	@PostMapping("/contact")
 	public Contact addContact(@RequestBody Contact contact) {
@@ -49,15 +45,5 @@ public class MyController {
 		
 	}
 	
-	@DeleteMapping("/contact/{contactId}")
-	public ResponseEntity<HttpStatus>deleteCourse(@PathVariable String contactId){
-		try {
-			this.contantService.deleteContact(contactId);
-			return new ResponseEntity<>(HttpStatus.OK);
-		}catch(Exception e) {
-			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-		
-	}
-
+	
 }

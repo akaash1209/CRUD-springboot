@@ -1,6 +1,11 @@
 package com.springrest.springrest.entities;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Contact {
+	@Id
 	private String id;
 	private String title;
 	private String description;
